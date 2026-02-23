@@ -1,0 +1,30 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        
+        // Введення довжини кола
+        Console.Write("Введіть довжину кола n: ");
+        
+        double n;
+        while (!double.TryParse(Console.ReadLine(), out n) || n <= 0)
+        {
+            Console.Write("Помилка! Введіть додатнє число: ");
+        }
+        
+        // Обчислення радіуса кола
+        // Формула довжини кола: L = 2πR
+        // Звідси: R = L / (2π)
+        double r = n / (2 * Math.PI);
+        
+        // Виведення результату
+        Console.WriteLine($"\nДовжина кола: {n}");
+        Console.WriteLine($"Радіус кола: {r:F3}");
+        
+        Console.WriteLine("\nНатисніть будь-яку клавішу для завершення...");
+        Console.ReadKey();
+    }
+}
